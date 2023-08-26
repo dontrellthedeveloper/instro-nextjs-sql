@@ -32,7 +32,9 @@ import { useEffect, useState } from "react";
       <SubscribeModal products={products} />
       <UploadModal /> */}
       <>
-        <Modal/>
+        <Modal isOpen onChange={()=> {}} title="test modal" description="test description">
+Test Children
+        </Modal>
       </>
     </>
   );
