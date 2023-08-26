@@ -1,6 +1,6 @@
-import Header from '@/components/Header'
-import ListItem from '@/components/ListItem'
-import Image from 'next/image'
+import Header from "@/components/Header";
+import ListItem from "@/components/ListItem";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,17 +14,18 @@ export default function Home() {
         overflow-y-auto
       "
     >
-       <Header>
+      <Header>
         <div className="mb-2">
-          <h1 
+          <h1
             className="
             text-white 
               text-3xl 
               font-semibold
-            ">
-              Welcome back
+            "
+          >
+            Welcome back
           </h1>
-          <div 
+          <div
             className="
               grid 
               grid-cols-1 
@@ -35,22 +36,21 @@ export default function Home() {
               mt-4
             "
           >
-            <ListItem 
-              name="Liked Songs" 
-              image="/images/liked.png" 
-              href="liked" 
+            <ListItem
+              name="Liked Songs"
+              image="/images/liked.png"
+              href="liked"
             />
           </div>
         </div>
       </Header>
       <div className="mt-2 mb-7 px-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-white text-2xl font-semibold">
-            Newest songs
-          </h1>
+          <h1 className="text-white text-2xl font-semibold">Newest songs</h1>
         </div>
+        <div>List of Songs</div>
         {/* <PageContent songs={songs} /> */}
       </div>
-      </div>
-  )
+    </div>
+  );
 }
