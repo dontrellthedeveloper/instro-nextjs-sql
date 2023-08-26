@@ -3,7 +3,7 @@
 import Modal from "@/components/Modal";
 import { useEffect, useState } from "react";
 
-// import AuthModal from "@/components/AuthModal";
+import AuthModal from "@/components/AuthModal";
 // import SubscribeModal from "@/components/SubscribeModal";
 // import UploadModal from "@/components/UploadModal";
 // import { ProductWithPrice } from "@/types";
@@ -28,14 +28,14 @@ import { useEffect, useState } from "react";
 
   return (
     <>
-      {/* <AuthModal />
-      <SubscribeModal products={products} />
+      <AuthModal />
+      {/* <SubscribeModal products={products} />
       <UploadModal /> */}
-      <>
+      {/* <>
         <Modal isOpen onChange={()=> {}} title="test modal" description="test description">
 Test Children
         </Modal>
-      </>
+      </> */}
     </>
   );
 }
