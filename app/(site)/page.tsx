@@ -1,13 +1,14 @@
 import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
-import Image from "next/image";
+
 import PageContent from "./components/PageContent";
 
 export const revalidate = 0;
 
 export default async function Home() {
   const songs = await getSongs();
+
   return (
     <div
       className="
@@ -21,16 +22,15 @@ export default async function Home() {
     >
       <Header>
         <div className="mb-2">
-          <h1
+          <h1 
             className="
             text-white 
               text-3xl 
               font-semibold
-            "
-          >
-            Welcome back
+            ">
+              Welcome back
           </h1>
-          <div
+          <div 
             className="
               grid 
               grid-cols-1 
@@ -41,10 +41,10 @@ export default async function Home() {
               mt-4
             "
           >
-            <ListItem
-              name="Liked Songs"
-              image="/images/liked.png"
-              href="liked"
+            <ListItem 
+              name="Liked Songs" 
+              image="/images/liked.png" 
+              href="liked" 
             />
           </div>
         </div>
@@ -58,5 +58,5 @@ export default async function Home() {
         <PageContent songs={songs} />
       </div>
     </div>
-  );
+  )
 }
