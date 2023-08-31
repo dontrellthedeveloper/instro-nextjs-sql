@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
 import PageContent from "./components/PageContent";
+import Image from "next/image";
 
 export const revalidate = 0;
 
@@ -25,10 +26,20 @@ export default async function Home() {
           <h1 
             className="
             text-white 
-              text-3xl 
+              text-xl 
               font-semibold
+              m-auto
+              text-center
             ">
-              Welcome back
+             
+              <Image
+                src="/images/instro-2.png"
+                width={125}
+                height={125}
+                alt="Picture of the author"
+                className="m-auto mb-2"
+              />
+               Song Instrumentals
           </h1>
           <div 
             className="
@@ -41,11 +52,11 @@ export default async function Home() {
               mt-4
             "
           >
-            <ListItem 
+            {/* <ListItem 
               name="Liked Songs" 
               image="/images/liked.png" 
               href="liked" 
-            />
+            /> */}
           </div>
         </div>
       </Header>
