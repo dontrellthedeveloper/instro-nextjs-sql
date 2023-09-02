@@ -25,6 +25,7 @@ const UploadModal = () => {
     defaultValues: {
       author: "",
       title: "",
+      genre: "",
       song: null,
       image: null,
     },
@@ -78,16 +79,16 @@ const UploadModal = () => {
         return toast.error("Failed image upload");
       }
 
-
-      // Create record 
+      // Create record
       const { error: supabaseError } = await supabaseClient
-        .from('songs')
+        .from("songs")
         .insert({
           user_id: user.id,
           title: values.title,
           author: values.author,
+          genre: values.genre,
           image_path: imageData.path,
-          song_path: songData.path
+          song_path: songData.path,
         });
 
       if (supabaseError) {
@@ -96,10 +97,9 @@ const UploadModal = () => {
 
       router.refresh();
       setIsLoading(false);
-      toast.success('Song created!');
+      toast.success("Song created!");
       reset();
       uploadModal.onClose();
-
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
@@ -127,6 +127,14 @@ const UploadModal = () => {
           {...register("author", { required: true })}
           placeholder="Song author"
         />
+        <Input
+          id="genre"
+          disabled={isLoading}
+          {...register("genre", { required: true })}
+          placeholder="Song genre"
+        />
+
+        
         <div>
           <div className="pb-1">Select a song file</div>
           <Input

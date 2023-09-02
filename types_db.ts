@@ -147,6 +147,7 @@ export interface Database {
           song_path: string | null
           title: string | null
           user_id: string | null
+          genre: string | null
         }
         Insert: {
           author?: string | null
@@ -156,6 +157,7 @@ export interface Database {
           song_path?: string | null
           title?: string | null
           user_id?: string | null
+          genre?: string | null
         }
         Update: {
           author?: string | null
@@ -165,6 +167,7 @@ export interface Database {
           song_path?: string | null
           title?: string | null
           user_id?: string | null
+          genre?: string | null
         }
         Relationships: [
           {
