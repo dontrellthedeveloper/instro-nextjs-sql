@@ -1,14 +1,24 @@
+'use'
+
 import getSongs from "@/actions/getSongs";
+import getSongsByGenre from "@/actions/getSongsByGenre";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
 import PageContent from "./components/PageContent";
 import Image from "next/image";
+import Categories from "@/components/Genres";
+import Logo from "@/components/Logo";
 
 export const revalidate = 0;
 
-export default async function Home() {
-  const songs = await getSongs();
+interface SearchProps {
+  searchParams: { genre: string }
+};
+
+export default async function Home({ searchParams}: SearchProps) {
+  // const songs = await getSongs();
+  const songs = await getSongsByGenre(searchParams.genre);
 
   return (
     <div
@@ -22,8 +32,8 @@ export default async function Home() {
       "
     >
       <Header>
-        <div className="mb-2">
-          <h1 
+        <div className="">
+          <h3 
             className="
             text-white 
               text-xl 
@@ -31,16 +41,17 @@ export default async function Home() {
               m-auto
               text-center
             ">
-             
-              <Image
+             {/* <Logo/> */}
+              {/* <Image
+                onClick={() => router.push('/')}
                 src="/images/instro-2.png"
                 width={125}
                 height={125}
                 alt="Picture of the author"
                 className="m-auto mb-2"
-              />
+              /> */}
                Song Instrumentals
-          </h1>
+          </h3>
           <div 
             className="
               grid 
@@ -62,10 +73,13 @@ export default async function Home() {
       </Header>
       <div className="mt-2 mb-7 px-6">
         <div className="flex justify-center items-center">
-          <h1 className="text-white text-2xl font-semibold ">
+          {/* <h1 className="text-white text-2xl font-semibold ">
             Browse
-          </h1>
+          </h1> */}
+          {/* <hr /> */}
+      
         </div>
+        <Categories/>
         <PageContent songs={songs} />
       </div>
     </div>

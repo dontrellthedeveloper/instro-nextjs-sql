@@ -11,6 +11,7 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
 import { FaUserAlt } from "react-icons/fa";
 import { toast } from "react-hot-toast";
+import Logo from "./Logo";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -42,14 +43,17 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           h-fit 
           bg-gradient-to-b 
           from-gray-800 
-          p-6
+          pl-6
+          pr-6
+          pt-6
+          
           `,
         className
       )}
     >
       <div className="w-full mb-4 flex items-center justify-between">
         <div className="hidden md:flex gap-x-2 items-center">
-          <button
+          {/* <button
             onClick={() => router.forward()}
             className="
               rounded-full 
@@ -78,7 +82,27 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             "
           >
             <RxCaretRight className="text-white" size={35} />
-          </button>
+          </button> */}
+
+          <h1 
+            className="
+            text-white 
+              text-xl 
+              font-semibold
+              m-auto
+              text-center
+            ">
+             <Logo/>
+              {/* <Image
+                onClick={() => router.push('/')}
+                src="/images/instro-2.png"
+                width={125}
+                height={125}
+                alt="Picture of the author"
+                className="m-auto mb-2"
+              /> */}
+               {/* Song Instrumentals */}
+          </h1>
         </div>
         <div className="flex md:hidden gap-x-2 items-center">
           <button

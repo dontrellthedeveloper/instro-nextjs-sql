@@ -4,8 +4,6 @@ import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/types";
 import Image from "next/image";
 import PlayButton from "./PlayButton";
-import { useState } from "react";
-import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 
 interface SongItemProps {
   data: Song;
@@ -14,12 +12,7 @@ interface SongItemProps {
 
 const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
   const imagePath = useLoadImage(data);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const Icon = isPlaying ? BsPauseFill : BsPlayFill;
-
   return (
-    
     <div
       onClick={() => onClick(data.id)}
       className="
@@ -87,12 +80,12 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
       <div 
         className="
           absolute 
-  
+          bottom-32
+
           right-5
         "
       >
         <PlayButton />
-        {/* <Icon size={30} className="text-white" /> */}
       </div>
     </div>
   );

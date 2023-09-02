@@ -18,6 +18,8 @@ const getSongs = async (): Promise<Song[]> => {
     console.log(error.message);
   }
 
+  
+
   return (data as any) || [];
 };
 
