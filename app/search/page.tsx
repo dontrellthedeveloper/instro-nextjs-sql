@@ -3,15 +3,16 @@ import SearchInput from "@/components/SearchInput";
 import Header from "@/components/Header";
 
 import SearchContent from "./components/SearchContent";
+import getSongsByAuthor from "@/actions/getSongsByAuthor";
 
 export const revalidate = 0;
 
 interface SearchProps {
-  searchParams: { title: string }
+  searchParams: { author: string }
 };
 
 const Search = async ({ searchParams }: SearchProps) => {
-  const songs = await getSongsByTitle(searchParams.title);
+  const songs = await getSongsByAuthor(searchParams.author);
 
   return (
     <div 

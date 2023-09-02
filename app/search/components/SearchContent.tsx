@@ -24,7 +24,7 @@ const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
           text-neutral-400
         "
       >
-        No songs found.
+        No artists found.
       </div>
     );
   }
