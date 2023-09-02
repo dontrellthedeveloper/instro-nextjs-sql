@@ -33,10 +33,10 @@ export default async function Home({ searchParams}: SearchProps) {
     >
       <Header>
         <div className="">
-          <h3 
+          <h4 
             className="
             text-white 
-              text-xl 
+              text-2xl 
               font-semibold
               m-auto
               text-center
@@ -51,7 +51,7 @@ export default async function Home({ searchParams}: SearchProps) {
                 className="m-auto mb-2"
               /> */}
                Song Instrumentals
-          </h3>
+          </h4>
           <div 
             className="
               grid 

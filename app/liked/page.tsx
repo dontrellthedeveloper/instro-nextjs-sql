@@ -27,12 +27,12 @@ const Liked = async () => {
             className="
               flex 
               flex-col 
-              md:flex-row 
+             
               items-center 
               gap-x-5
             "
           >
-            <div className="relative h-32 w-32 lg:h-44 lg:w-44">
+            <div className="relative h-16 w-16 lg:h-16 lg:w-16">
               <Image
                 className="object-cover"
                 fill
@@ -41,15 +41,15 @@ const Liked = async () => {
               />
             </div>
             <div className="flex flex-col gap-y-2 mt-4 md:mt-0">
-              <p className="hidden md:block font-semibold text-sm">
+              {/* <p className="hidden md:block font-semibold text-sm">
                 Playlist
-              </p>
+              </p> */}
               <h1 
                 className="
                   text-white 
-                  text-4xl 
-                  sm:text-5xl 
-                  lg:text-7xl 
+                  text-3xl 
+                  sm:text-3xl 
+                  lg:text-3xl 
                   font-bold
                 "
               >

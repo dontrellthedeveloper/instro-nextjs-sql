@@ -12,6 +12,9 @@ import SidebarItem from "./SidebarItem";
 import Box from "./Box";
 import Library from "./Library";
 import { useMemo } from "react";
+import ListItem from "./ListItem";
+import LikeItem from "./LikeItem";
+import { AiFillHeart } from "react-icons/ai";
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -35,6 +38,21 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
       href: '/search',
       active: pathname === '/search'
     },
+  ], [pathname]);
+
+  const route = useMemo(() => [
+    {
+      icon: AiFillHeart,
+      label: 'Favorites',
+      active: pathname !== '/liked',
+      href: '/liked'
+    },
+    // {
+    //   icon: BiSearch,
+    //   label: 'Search',
+    //   href: '/search',
+    //   active: pathname === '/search'
+    // },
   ], [pathname]);
 
   return (
@@ -63,7 +81,20 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
             {routes.map((item) => (
               <SidebarItem key={item.label} {...item} />
             ))}
+
+              
+            {route.map((item) => (
+              <LikeItem key={item.label} {...item} />
+            ))}
+
+              
+            {/* <LikeItem/> */}
           </div>
+             {/* <ListItem 
+              name="Liked Songs" 
+              image="/images/liked.png" 
+              href="liked" 
+            /> */}
         </Box>
         <Box className="overflow-y-auto h-full">
           <Library songs={songs} />
