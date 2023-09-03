@@ -35,3 +35,39 @@ body,
   background: #555;
   /* background: #fff; */
 }
+
+.sticky-c {
+  position: relative;
+}
+
+.sticky-thc {
+    position: sticky;
+    top: 0;
+}
+
+
+.handle-scroll {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  border-bottom: none;
+  background: hsla(0,0%,100%,.85);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.no-sticky {
+
+}
+
+
+header{
+  position: sticky;
+  top: -1px;
+  font-size: 3em;
+  transition: .2s ease-out;
+  z-index: 1000;
+  background-color: #171717 ;
+}

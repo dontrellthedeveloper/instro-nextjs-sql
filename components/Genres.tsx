@@ -24,6 +24,10 @@ import Container from "./Container";
 import GenresBox from "./GenresBox";
 import { usePathname, useSearchParams } from "next/navigation";
 import GenresOption from "./GenresOption";
+import { useEffect, useState } from "react";
+import StickyHeader from "./StickyHeader";
+import Logo from "./Logo";
+import Logo2 from "./Logo2";
 
 export const genres = [
   {
@@ -68,6 +72,19 @@ const Genres = () => {
   const pathname = usePathname();
   const isMainPage = pathname === "/";
 
+//   const [scroll, setScroll] = useState(false);
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", () => {
+//       setScroll(window.scrollY > 40);
+//     });
+//     return () => {
+//       window.removeEventListener("scroll", () => {
+//         setScroll(false);
+//       });
+//     };
+//   }, []);
+
   if (!isMainPage) {
     return null;
   }
@@ -84,7 +101,6 @@ const Genres = () => {
 
   const genreHeader = newTemp.split(":").pop();
 
-
   return (
     <>
       <div
@@ -97,7 +113,6 @@ const Genres = () => {
               pb-4
             "
       >
-
         {genreHeader ? (
           <>
             <h1>{genreHeader}</h1>
@@ -108,26 +123,36 @@ const Genres = () => {
           </>
         )}
       </div>
+      <StickyHeader>
       <Container>
-        <div
-          className="
+        <div>
+          <div
+            className="
             flex 
             flex-row 
             items-center 
             justify-between
             overflow-x-auto
+         
+
           "
-        >
-          {genres.map((item) => (
-            <GenresBox
-              key={item.label}
-              label={item.label}
-              icon={item.icon}
-              selected={genre === item.label}
-            />
-          ))}
+          >
+
+            {/* <Logo2/> */}
+
+            {genres.map((item) => (
+              <GenresBox
+                key={item.label}
+                label={item.label}
+                icon={item.icon}
+                selected={genre === item.label}
+              />
+            ))}
+          </div>
         </div>
       </Container>
+      </StickyHeader>
+
     </>
   );
 };
