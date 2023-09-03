@@ -137,8 +137,8 @@ const Genres = () => {
 
           "
           >
-
-            {/* <Logo2/> */}
+            
+            <Logo2/>
 
             {genres.map((item) => (
               <GenresBox

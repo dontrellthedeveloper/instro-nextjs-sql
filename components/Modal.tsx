@@ -25,6 +25,7 @@ const Modal: React.FC<ModalProps> = ({
             backdrop-blur-sm 
             fixed 
             inset-0
+            
           "
         />
         <Dialog.Content
@@ -48,6 +49,7 @@ const Modal: React.FC<ModalProps> = ({
             bg-neutral-800 
             p-[25px] 
             focus:outline-none
+            z-10
           "
         >
           <Dialog.Title

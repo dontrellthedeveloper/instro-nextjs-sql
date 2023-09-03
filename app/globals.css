@@ -20,14 +20,14 @@ body,
 /* Track */
 ::-webkit-scrollbar-track {
   background: #171717;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
 
   background: #555;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 /* Handle on hover */
@@ -68,6 +68,6 @@ header{
   top: -1px;
   font-size: 3em;
   transition: .2s ease-out;
-  z-index: 1000;
+  z-index: 1;
   background-color: #171717 ;
 }
