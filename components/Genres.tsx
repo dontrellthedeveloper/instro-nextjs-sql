@@ -27,7 +27,7 @@ import GenresOption from "./GenresOption";
 
 export const genres = [
   {
-    label: "R&B Vibe",
+    label: "R&B Vibes",
     icon: TbBeach,
   },
   {
