@@ -27,10 +27,14 @@ const GenresBox: React.FC<CategoryBoxProps> = ({
       currentQuery = qs.parse(params.toString());
     }
 
+    // console.log(currentQuery)
+
     const updatedQuery: any = {
       ...currentQuery,
       genre: label,
     };
+    
+    // console.log(updatedQuery)
 
     if (params?.get("genre") === label) {
       delete updatedQuery.genre;
@@ -43,6 +47,8 @@ const GenresBox: React.FC<CategoryBoxProps> = ({
       },
       { skipNull: true }
     );
+
+    // console.log(url)
 
     router.push(url);
   }, [label, router, params]);

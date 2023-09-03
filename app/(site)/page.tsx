@@ -33,7 +33,7 @@ export default async function Home({ searchParams}: SearchProps) {
     >
       <Header>
         <div className="">
-          <h4 
+          {/* <h4 
             className="
             text-white 
               text-2xl 
@@ -41,17 +41,9 @@ export default async function Home({ searchParams}: SearchProps) {
               m-auto
               text-center
             ">
-             {/* <Logo/> */}
-              {/* <Image
-                onClick={() => router.push('/')}
-                src="/images/instro-2.png"
-                width={125}
-                height={125}
-                alt="Picture of the author"
-                className="m-auto mb-2"
-              /> */}
+
                Song Instrumentals
-          </h4>
+          </h4> */}
           <div 
             className="
               grid 
