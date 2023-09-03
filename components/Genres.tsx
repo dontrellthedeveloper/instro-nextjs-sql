@@ -94,7 +94,7 @@ const Genres = () => {
               font-semibold
               m-auto
               text-center
-              pb-6
+              pb-4
             "
       >
 
