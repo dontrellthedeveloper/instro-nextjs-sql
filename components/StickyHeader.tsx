@@ -26,7 +26,8 @@ const useDetectSticky = (ref: any, observerSettings = {threshold: [1]}) => {
 }
 
 export default function StickyHeader({ children, sticky=false, className, ...rest }: any){
-  const [isSticky, ref, setIsSticky] = useDetectSticky()
+  // @ts-ignore
+    const [isSticky, ref, setIsSticky] = useDetectSticky()
   
   return (
     <header className={className + (isSticky ? " isSticky" : "")} ref={ref} {...rest}>
